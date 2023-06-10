@@ -7,8 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="ViewModels\" />
       <Folder Include="Views\Shared\Components\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Application\WorkoutApp.DataTransferObjects\WorkoutApp.DataTransferObjects.csproj" />
+      <ProjectReference Include="..\..\Application\WorkoutApp.Services\WorkoutApp.Services.csproj" />
     </ItemGroup>
 
 </Project>

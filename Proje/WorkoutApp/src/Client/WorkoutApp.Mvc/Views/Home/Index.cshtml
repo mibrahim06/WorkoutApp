@@ -1,14 +1,14 @@
-﻿@{
+﻿@model PaginationWorkoutViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="card text-white bg-dark" style="width: 18rem; border: 1px solid white;">
-    <img src="https://www.fitnesseducation.edu.au/wp-content/uploads/2020/10/Pushups.jpg" class="card-img-top" alt="...">
-    <div class="card-body" style="font-family: 'Trebuchet MS'">
-        <h5 class="card-title">Şınav</h5>
-        <p class="card-text" >Şınav hareketi, vücut ağırlığınızı kullanarak üst vücut kaslarını çalıştıran etkili bir egzersizdir.</p>
-    </div>
-    <div class="card-body">
-        <a href="#" class="card-link">Detaylar</a>
-    </div>
+<div class="row m-4">
+    @foreach(var workoutDisplay in Model.Workouts)
+    {
+        <div class="col-3">
+            <partial name="_WorkoutDisplayResponse" model="workoutDisplay"/>
+        </div>
+    }
+  
 </div>

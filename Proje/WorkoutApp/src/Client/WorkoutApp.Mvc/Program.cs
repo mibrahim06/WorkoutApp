@@ -1,7 +1,14 @@
+using WorkoutApp.Infrastructure.Repositories;
+using WorkoutApp.Services;
+using WorkoutApp.Services.Mappings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
+builder.Services.AddScoped<IWorkoutRepository, FakeWorkoutRepository>();
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 var app = builder.Build();
 

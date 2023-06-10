@@ -1,0 +1,13 @@
+@model WorkoutApp.DataTransferObjects.Responses.WorkoutDisplayResponse
+
+ <div class="card text-white bg-dark" style="width: 18rem; border: 1px solid white;">
+     <img src=@Model.ImgUrl class="card-img-top" alt="...">
+     <div class="card-body" style="font-family: 'Trebuchet MS'">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text" >@Model.Description</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Detaylar</a>
+        </div>
+</div>
+

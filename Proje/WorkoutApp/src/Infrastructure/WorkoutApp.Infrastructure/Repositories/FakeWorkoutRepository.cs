@@ -33,10 +33,16 @@ public class FakeWorkoutRepository : IWorkoutRepository
         var workout = _workouts.FirstOrDefault(x => x.Id == id);
         return Task.FromResult(workout);
     }
-
+    
+    
     public Task<List<Workout>> GetAllAsync()
     {
         return Task.FromResult(_workouts);
+    }
+
+    public List<Workout> GetAll()
+    {
+        return _workouts;
     }
 
     public Task<Workout> AddAsync(Workout entity)
