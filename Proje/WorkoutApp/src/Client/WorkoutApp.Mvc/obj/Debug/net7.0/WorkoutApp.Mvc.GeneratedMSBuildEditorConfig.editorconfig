@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Xb3Jrb3V0RGlzcGxheVJlc3BvbnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/WorkoutPlan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV29ya291dFBsYW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
