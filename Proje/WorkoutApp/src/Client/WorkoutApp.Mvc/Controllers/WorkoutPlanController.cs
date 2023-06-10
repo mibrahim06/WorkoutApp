@@ -16,11 +16,6 @@ public class WorkoutPlanController : Controller
     public IActionResult Index()
     {
         var workoutCollection = getWorkOutCollectionFromSession();
-        // console show workout collection
-        foreach (var item in workoutCollection.Workouts)
-        {
-            Console.WriteLine(item.Workout.Name);
-        }
         return View(workoutCollection);
     }
 
