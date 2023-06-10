@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domain\WorkoutApp.Entities\WorkoutApp.Entities.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\WorkoutApp.Infrastructure\WorkoutApp.Infrastructure.csproj" />
+      <ProjectReference Include="..\WorkoutApp.DataTransferObjects\WorkoutApp.DataTransferObjects.csproj" />
+    </ItemGroup>
+
+</Project>

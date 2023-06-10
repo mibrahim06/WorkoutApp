@@ -1,0 +1,128 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "WorkoutApp.DataTransferObjects/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WorkoutApp.DataTransferObjects.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkoutApp.DataTransferObjects.dll": {}
+        }
+      },
+      "WorkoutApp.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WorkoutApp.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkoutApp.Entities.dll": {}
+        }
+      },
+      "WorkoutApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WorkoutApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkoutApp.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WorkoutApp.DataTransferObjects/1.0.0": {
+      "type": "project",
+      "path": "../WorkoutApp.DataTransferObjects/WorkoutApp.DataTransferObjects.csproj",
+      "msbuildProject": "../WorkoutApp.DataTransferObjects/WorkoutApp.DataTransferObjects.csproj"
+    },
+    "WorkoutApp.Entities/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/WorkoutApp.Entities/WorkoutApp.Entities.csproj",
+      "msbuildProject": "../../Domain/WorkoutApp.Entities/WorkoutApp.Entities.csproj"
+    },
+    "WorkoutApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/WorkoutApp.Infrastructure/WorkoutApp.Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/WorkoutApp.Infrastructure/WorkoutApp.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "WorkoutApp.DataTransferObjects >= 1.0.0",
+      "WorkoutApp.Entities >= 1.0.0",
+      "WorkoutApp.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/musibra/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Application/WorkoutApp.Services/WorkoutApp.Services.csproj",
+      "projectName": "WorkoutApp.Services",
+      "projectPath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Application/WorkoutApp.Services/WorkoutApp.Services.csproj",
+      "packagesPath": "/Users/musibra/.nuget/packages/",
+      "outputPath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Application/WorkoutApp.Services/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/musibra/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Application/WorkoutApp.DataTransferObjects/WorkoutApp.DataTransferObjects.csproj": {
+              "projectPath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Application/WorkoutApp.DataTransferObjects/WorkoutApp.DataTransferObjects.csproj"
+            },
+            "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Domain/WorkoutApp.Entities/WorkoutApp.Entities.csproj": {
+              "projectPath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Domain/WorkoutApp.Entities/WorkoutApp.Entities.csproj"
+            },
+            "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Infrastructure/WorkoutApp.Infrastructure/WorkoutApp.Infrastructure.csproj": {
+              "projectPath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Infrastructure/WorkoutApp.Infrastructure/WorkoutApp.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
