@@ -35,7 +35,7 @@ public class FakeCategoryRepository : ICategoryRepository
         return _categories;
     }
 
-    public Task<Category> AddAsync(Category entity)
+    public Task AddAsync(Category entity)
     {
         var category = _categories.FirstOrDefault(x => x.Id == entity.Id);
         if (category == null)
@@ -45,7 +45,7 @@ public class FakeCategoryRepository : ICategoryRepository
         return Task.FromResult(entity);
     }
 
-    public Task<Category> UpdateAsync(Category entity)
+    public Task UpdateAsync(Category entity)
     {
         var category = _categories.FirstOrDefault(x => x.Id == entity.Id);
         if (category != null)
@@ -55,7 +55,7 @@ public class FakeCategoryRepository : ICategoryRepository
         return Task.FromResult(entity);
     }
 
-    public Task<Category> DeleteAsync(Category entity)
+    public Task DeleteAsync(Category entity)
     {
         var category = _categories.FirstOrDefault(x => x.Id == entity.Id);
         if (category != null)

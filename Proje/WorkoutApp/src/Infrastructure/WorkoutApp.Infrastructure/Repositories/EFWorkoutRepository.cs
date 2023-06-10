@@ -13,7 +13,7 @@ public class EFWorkoutRepository : IWorkoutRepository
     }
     public Task<Workout> GetByIdAsync(int id)
     {
-        var workout = _dbContext.Workouts.FirstOrDefaultAsync(x => x.Id == id);
+        var workout = _dbContext.Workouts.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         return workout;
     }
 
@@ -24,40 +24,37 @@ public class EFWorkoutRepository : IWorkoutRepository
 
     public List<Workout> GetAll()
     {
-        return _dbContext.Workouts.ToList();
+        return _dbContext.Workouts.AsNoTracking().ToList();
     }
 
-    public async Task<Workout> AddAsync(Workout entity)
+    public async Task AddAsync(Workout entity)
     {
         var addingWorkout = await _dbContext.Workouts.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
-        return addingWorkout.Entity;
     }
 
-    public async Task<Workout> UpdateAsync(Workout entity)
+    public async Task UpdateAsync(Workout entity)
     {
         var updatingWorkout = _dbContext.Workouts.Update(entity);
         await _dbContext.SaveChangesAsync();
-        return updatingWorkout.Entity;
     }
 
-    public async Task<Workout> DeleteAsync(Workout entity)
+    public async Task DeleteAsync(Workout entity)
     {
         var deletingWorkout = await _dbContext.Workouts.FindAsync(entity.Id);
         _dbContext.Workouts.Remove(deletingWorkout);
         await _dbContext.SaveChangesAsync();
-        return deletingWorkout;
     }
 
     public IEnumerable<Workout> GetWorkoutsByCategory(int categoryId)
     {
-        var workouts = _dbContext.Workouts.Where(x => x.CategoryId == categoryId);
+        var workouts = _dbContext.Workouts.AsNoTracking().Where(x => x.CategoryId == categoryId);
         return workouts;
     }
 
     public IEnumerable<Workout> GetWorkoutsByName(string name)
     {
-        var workouts = _dbContext.Workouts.Where(x => x.Name == name);
+        var workouts = _dbContext.Workouts.AsNoTracking().Where(x => x.Name == name);
         return workouts;
     }
 }

@@ -52,7 +52,7 @@ public class FakeWorkoutRepository : IWorkoutRepository
         return _workouts;
     }
 
-    public Task<Workout> AddAsync(Workout entity)
+    public Task AddAsync(Workout entity)
     {
         var workout = _workouts.FirstOrDefault(x => x.Id == entity.Id);
         if (workout == null)
@@ -62,7 +62,7 @@ public class FakeWorkoutRepository : IWorkoutRepository
         return Task.FromResult(entity);
     }
 
-    public Task<Workout> UpdateAsync(Workout entity)
+    public Task UpdateAsync(Workout entity)
     {
         var workout = _workouts.FirstOrDefault(x => x.Id == entity.Id);
         if (workout != null)
@@ -74,7 +74,7 @@ public class FakeWorkoutRepository : IWorkoutRepository
         return Task.FromResult(entity);
     }
 
-    public Task<Workout> DeleteAsync(Workout entity)
+    public Task DeleteAsync(Workout entity)
     {
         var workout = _workouts.FirstOrDefault(x => x.Id == entity.Id);
         if (workout != null)

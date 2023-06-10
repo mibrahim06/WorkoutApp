@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UhPjgSR0rW948FCbm9v5DIizqoWUBoM3snqPB/Vs7uo4M3/0+cb6ddDu2FrtV6sZ9Sfj4CTQ435Gok9OcaSRmQ==",
+  "dgSpecHash": "L5a+Ohhf5OAjcIYtKzuEhXpElTr14CkeSfR1DoGy+tWLUtwRSYFqqmxQaIi1OVPDEhUhGtCYxu7iwp5efBRIwA==",
   "success": true,
   "projectFilePath": "/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/WorkoutApp.Mvc.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/musibra/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/musibra/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/musibra/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
+    "/Users/musibra/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/7.0.5/microsoft.aspnetcore.diagnostics.entityframeworkcore.7.0.5.nupkg.sha512",
     "/Users/musibra/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/musibra/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/musibra/.nuget/packages/microsoft.data.sqlclient/5.0.1/microsoft.data.sqlclient.5.0.1.nupkg.sha512",
