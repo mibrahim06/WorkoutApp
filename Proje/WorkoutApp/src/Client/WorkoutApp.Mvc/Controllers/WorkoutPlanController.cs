@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using WorkoutApp.Services;
 
 namespace WorkoutApp.Mvc.Controllers;
 
 public class WorkoutPlanController : Controller
 {
+    private readonly IWorkoutService _workoutService;
+    public WorkoutPlanController(IWorkoutService workoutService)
+    {
+        _workoutService = workoutService;
+    }
     // GET
     public IActionResult Index()
     {
@@ -12,6 +18,8 @@ public class WorkoutPlanController : Controller
 
     public IActionResult AddWorkout(int id)
     {
-        return Json(new { message = "Egzersiz başarıyla eklendi!"});
+        var selectedWorkout = _workoutService.GetWorkoutDisplayResponseById(id);
+        var name = selectedWorkout.Name;
+        return Json(new { message = $"{name} başarıyla eklendi!"});
     }
 }

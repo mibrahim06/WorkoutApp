@@ -6,4 +6,5 @@ public interface IWorkoutService
 {
     public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponses();
     public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponsesByCategoryId(int categoryId);
+    public WorkoutDisplayResponse GetWorkoutDisplayResponseById(int id);
 }

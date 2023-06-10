@@ -25,4 +25,10 @@ public class WorkoutService : IWorkoutService
         var workouts = _workoutRepository.GetWorkoutsByCategory(categoryId);
         return _mapper.Map<IEnumerable<WorkoutDisplayResponse>>(workouts);
     }
+    
+    public WorkoutDisplayResponse GetWorkoutDisplayResponseById(int id)
+    {
+        var workout = _workoutRepository.GetByIdAsync(id).Result;
+        return _mapper.Map<WorkoutDisplayResponse>(workout);
+    }
 }
