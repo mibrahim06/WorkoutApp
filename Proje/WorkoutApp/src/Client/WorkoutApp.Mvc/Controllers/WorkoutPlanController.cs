@@ -16,6 +16,11 @@ public class WorkoutPlanController : Controller
     public IActionResult Index()
     {
         var workoutCollection = getWorkOutCollectionFromSession();
+        // console show workout collection
+        foreach (var item in workoutCollection.Workouts)
+        {
+            Console.WriteLine(item.Workout.Name);
+        }
         return View(workoutCollection);
     }
 
@@ -27,29 +32,31 @@ public class WorkoutPlanController : Controller
         var name = selectedWorkout.Name;
         var workoutItem = new WorkoutItem(selectedWorkout, 1);
         // add workout item to workout collection
-        WorkoutCollection workoutCollection = getWorkOutCollectionFromSession();
+        var workoutCollection = getWorkOutCollectionFromSession();
         workoutCollection.AddNewWorkout(workoutItem);
         // save workout collection to session
         saveToSession(workoutCollection);
         return Json(new { message = $"{name} başarıyla eklendi!"});
     }
 
+    private WorkoutCollection getWorkOutCollectionFromSession()
+    {
+        var serialized = HttpContext.Session.GetString("plan");
+        if (serialized == null)
+        {
+            var workoutCollection = new WorkoutCollection();
+            return workoutCollection;
+        }
+        var workout = JsonSerializer.Deserialize<WorkoutCollection>(serialized);
+        return workout;
+    }
+    
     private void saveToSession(WorkoutCollection workoutCollection)
     {
         var serialized = JsonSerializer.Serialize<WorkoutCollection>(workoutCollection);
-        HttpContext.Session.SetString("plan", serialized);
-    }
-
-    private WorkoutCollection getWorkOutCollectionFromSession()
-    {
-        var serializedString = HttpContext.Session.GetString("plan"); 
-        // if first time, create new collection and return
-        if(serializedString == null)
+        if (!string.IsNullOrWhiteSpace(serialized))
         {
-            return new WorkoutCollection();
-        } 
-        // if not first time, get current collection from session and return
-        var currentColletion = JsonSerializer.Deserialize<WorkoutCollection>(serializedString);
-        return currentColletion;
+            HttpContext.Session.SetString("plan", serialized);
+        }
     }
 }
