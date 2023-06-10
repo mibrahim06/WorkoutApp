@@ -19,7 +19,7 @@ public class EFWorkoutRepository : IWorkoutRepository
 
     public Task<List<Workout>> GetAllAsync()
     {
-        return _dbContext.Workouts.ToListAsync();
+        return _dbContext.Workouts.AsNoTracking().ToListAsync();
     }
 
     public List<Workout> GetAll()

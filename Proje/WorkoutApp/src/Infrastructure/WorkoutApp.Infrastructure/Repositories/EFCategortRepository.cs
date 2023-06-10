@@ -19,7 +19,7 @@ public class EFCategortRepository : ICategoryRepository
 
     public Task<List<Category>> GetAllAsync()
     {
-        return _dbContext.Categories.ToListAsync();
+        return _dbContext.Categories.AsNoTracking().ToListAsync();
     }
 
     public List<Category> GetAll()
