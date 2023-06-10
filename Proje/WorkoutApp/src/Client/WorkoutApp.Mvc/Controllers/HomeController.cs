@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using WorkoutApp.DataTransferObjects.Responses;
 using WorkoutApp.Mvc.Models;
 using WorkoutApp.Services;
 
@@ -19,7 +20,8 @@ public class HomeController : Controller
     {
         var workouts = _workoutService.GetWorkoutDisplayResponses();
         var workoutPerPage = 8;
-        var totalWorkoutCount = workouts.Count();
+        var workoutDisplayResponses = workouts as WorkoutDisplayResponse[] ?? workouts.ToArray();
+        var totalWorkoutCount = workoutDisplayResponses.Count();
         var pageCount = (int)Math.Ceiling((double)totalWorkoutCount / workoutPerPage);
         pageNo = pageNo > pageCount ? pageCount : pageNo;
         var pagingInfo = new PagingInfo
@@ -28,7 +30,7 @@ public class HomeController : Controller
             ItemsPerPage = workoutPerPage,
             TotalItems = totalWorkoutCount
         };
-        var paginatedWorkouts = workouts.Skip((pageNo - 1) * workoutPerPage).Take(workoutPerPage);
+        var paginatedWorkouts = workoutDisplayResponses.Skip((pageNo - 1) * workoutPerPage).Take(workoutPerPage);
         var paginationWorkoutViewModel = new PaginationWorkoutViewModel
         {
             Workouts = paginatedWorkouts,

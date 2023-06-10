@@ -42,7 +42,7 @@ public class PageLinkBuilderTagHelper : TagHelper
         IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
         var navTag = new TagBuilder("nav");
         var ulTag = new TagBuilder("ul");
-        ulTag.AddCssClass("pagination bg-dark justify-content-center");
+        ulTag.AddCssClass("pagination pagination-dark justify-content-center");
 
         var previousTag = CreatePageItem("Previous", PageModel.CurrentPage > 1, urlHelper.Action(PageAction, new { pageNo = PageModel.CurrentPage - 1 }));
         ulTag.InnerHtml.AppendHtml(previousTag);
