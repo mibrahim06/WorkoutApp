@@ -12,6 +12,6 @@ public class WorkoutPlanController : Controller
 
     public IActionResult AddWorkout(int id)
     {
-        return Json(new { message = $"{id}'li workout eklendi" });
+        return Json(new { message = "Egzersiz başarıyla eklendi!"});
     }
 }
