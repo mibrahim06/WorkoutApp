@@ -7,13 +7,13 @@
 <div class="row m-4">
     @foreach(var workoutDisplay in Model.Workouts)
     {
-        @if (columnCount != 0 && columnCount % 4 == 0)
+        @if (columnCount != 0 && columnCount % 3 == 0)
         {
             @:</div>
             @:<div class="row m-4">
         }
         columnCount++;
-        <div class="col-3">
+        <div class="col-4">
             <partial name="_WorkoutDisplayResponse" model="workoutDisplay"/>
         </div>
     }

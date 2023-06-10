@@ -1,0 +1,14 @@
+@model System.Collections.Generic.IEnumerable<WorkoutApp.DataTransferObjects.Responses.CategoryDisplayResponse>
+
+<style>
+    .text-color {
+        color: #090440;
+    }
+</style>
+
+<div class="list-group">
+    @foreach(var category in Model)
+    {
+        <a asp-action="Index" asp-controller="Home" asp-route-id="@category.Id" class="list-group-item list-group-item-action bg-secondary text-color">@category.Name</a>
+    }
+</div>

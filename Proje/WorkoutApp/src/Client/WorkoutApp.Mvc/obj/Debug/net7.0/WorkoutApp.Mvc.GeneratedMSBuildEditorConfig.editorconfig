@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Pages/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcG9uZW50cy9NZW51L0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudS9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/musibra/Desktop/Turkcell/Proje/WorkoutApp/src/Client/WorkoutApp.Mvc/Views/Shared/Error.cshtml]
