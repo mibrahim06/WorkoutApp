@@ -9,6 +9,7 @@ public class MapProfile : Profile
     public MapProfile()
     {
         CreateMap<Workout, WorkoutDisplayResponse>();
+        CreateMap<Category, CategoryDisplayResponse>();
     }
     
 }

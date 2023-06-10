@@ -1,9 +1,8 @@
-namespace WorkoutApp.Entities;
+namespace WorkoutApp.DataTransferObjects.Responses;
 
-public class Category : IEntity
+public class CategoryDisplayResponse
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
     public string? Description { get; set; } = null!;
-  
 }

@@ -27,7 +27,7 @@ namespace WorkoutApp.Mvc.Models.TagBuilders
             IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
             var navTag = new TagBuilder("nav");
             var ulTag = new TagBuilder("ul");
-            ulTag.AddCssClass("pagination pagination-dark justify-content-center");
+            ulTag.AddCssClass("pagination justify-content-center");
             var previousTagUrl = urlHelper.Action(PageAction, new { pageNo = PageModel.CurrentPage - 1});
             var previousTag = CreatePageItem("Previous", PageModel.CurrentPage > 1, previousTagUrl);
             ulTag.InnerHtml.AppendHtml(previousTag);

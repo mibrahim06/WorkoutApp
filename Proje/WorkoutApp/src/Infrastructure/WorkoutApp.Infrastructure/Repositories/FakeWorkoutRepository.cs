@@ -1,6 +1,10 @@
 namespace WorkoutApp.Infrastructure.Repositories;
 using WorkoutApp.Entities;
 
+/**
+ * Fake repository for the Workout entity to be used for testing
+ * @Warning: This is not a real repository, it is only used for testing purposes
+ */
 public class FakeWorkoutRepository : IWorkoutRepository
 {
     private List<Workout> _workouts;
