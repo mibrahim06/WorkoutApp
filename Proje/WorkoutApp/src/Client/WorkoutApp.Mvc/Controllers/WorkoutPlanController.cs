@@ -15,7 +15,8 @@ public class WorkoutPlanController : Controller
     // GET 
     public IActionResult Index()
     {
-        return View();
+        var workoutCollection = getWorkOutCollectionFromSession();
+        return View(workoutCollection);
     }
 
     public IActionResult AddWorkout(int id)
