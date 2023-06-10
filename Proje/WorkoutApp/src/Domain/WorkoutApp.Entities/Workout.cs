@@ -7,5 +7,5 @@ public class Workout : IEntity
     public string? Description { get; set; }
     public int? CategoryId { get; set; }
     public Category? Category { get; set; }
-    public string? ImgUrl { get; set; } = "https://www.fitnesseducation.edu.au/wp-content/uploads/2020/10/Pushups.jpg";
+    public string? ImgUrl { get; set; } = "https://cdn.shopify.com/s/files/1/0145/1162/articles/He_is_lifting_weight_1024x1024.png?v=1636861979";
 }
