@@ -16,11 +16,11 @@ public class HomeController : Controller
         _workoutService = workoutService;
     }
 
-    public IActionResult Index(int pageNo = 1, int? Id = null)
+    public IActionResult Index(int id, int pageNo = 1)
     {
-        var workouts = Id == null ? _workoutService.GetWorkoutDisplayResponses() :
-            _workoutService.GetWorkoutDisplayResponsesByCategoryId(Id.Value);
-        var workoutPerPage = 8;
+        var workouts = id == 0 ? _workoutService.GetWorkoutDisplayResponses() :
+            _workoutService.GetWorkoutDisplayResponsesByCategoryId(id);
+        var workoutPerPage = 6;
         var workoutDisplayResponses = workouts as WorkoutDisplayResponse[] ?? workouts.ToArray();
         var totalWorkoutCount = workoutDisplayResponses.Count();
         var pageCount = (int)Math.Ceiling((double)totalWorkoutCount / workoutPerPage);
