@@ -6,24 +6,25 @@ public static class DatabaseSeeding
 {
     public static void SeedDatabase(WorkoutDbContext dbContext)
     {
+        
+        // clean up the database before seeding
         seedCategories(dbContext);
         seedWorkouts(dbContext);
     }
 
     private static void seedCategories(WorkoutDbContext dbContext)
     {
-        // clean up the database before seeding
-        dbContext.Categories.RemoveRange(dbContext.Categories);
-        dbContext.SaveChanges();
-        
         if (!dbContext.Categories.Any())
         {
-            var category = new Category
+            var categories = new List<Category>
             {
-                Name = "Sample Category",
-                Description = "This is a sample category",
+                new Category { Name = "Strength" },
+                new Category { Name = "Cardio" },
+                new Category { Name = "Flexibility" },
+                new Category { Name = "Balance" },
+                
             };
-            dbContext.Categories.Add(category);
+            dbContext.Categories.AddRange(categories);
             dbContext.SaveChanges();
         }
         
@@ -31,19 +32,15 @@ public static class DatabaseSeeding
 
     private static void seedWorkouts(WorkoutDbContext dbContext)
     {
-        // Clean up the database before seeding
-        dbContext.Workouts.RemoveRange(dbContext.Workouts);
-        dbContext.SaveChanges();
-        
         if (!dbContext.Workouts.Any())
         {
-            var workout = new Workout
+            var workouts = new List<Workout>
             {
-                Name = "Sample Workout",
-                Description = "This is a sample workout",
-                CategoryId = 1, // Mevcut bir kategori kimliği
+                new Workout { Name = "Workout 1", Description = "Description 1", CategoryId = 1 },
+                new Workout { Name = "Workout 2", Description = "Description 2", CategoryId = 2 },
+                new Workout { Name = "Workout 3", Description = "Description 3", CategoryId = 3 },
             };
-            dbContext.Workouts.Add(workout);
+            dbContext.Workouts.AddRange(workouts);
             dbContext.SaveChanges();
         }
     }
