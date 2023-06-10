@@ -28,12 +28,10 @@ public class HomeController : Controller
             ItemsPerPage = workoutPerPage,
             TotalItems = totalWorkoutCount
         };
-        Console.WriteLine("test");
-        Console.WriteLine($"pageNo: {pageNo}, pageCount: {pageCount}");
-        Console.WriteLine("Workout number: " + workouts.Count());
+        var paginatedWorkouts = workouts.Skip((pageNo - 1) * workoutPerPage).Take(workoutPerPage);
         var paginationWorkoutViewModel = new PaginationWorkoutViewModel
         {
-            Workouts = workouts,
+            Workouts = paginatedWorkouts,
             PagingInfo = pagingInfo
         };
         return View(paginationWorkoutViewModel);
