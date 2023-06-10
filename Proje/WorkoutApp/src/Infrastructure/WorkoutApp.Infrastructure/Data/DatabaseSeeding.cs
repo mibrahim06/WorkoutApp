@@ -6,14 +6,14 @@ public static class DatabaseSeeding
 {
     public static void SeedDatabase(WorkoutDbContext dbContext)
     {
-        
-        // clean up the database before seeding
+        // if there are no categories in the database, add some
         seedCategories(dbContext);
         seedWorkouts(dbContext);
     }
 
     private static void seedCategories(WorkoutDbContext dbContext)
     {
+        // if there are no categories in the database, add some
         if (!dbContext.Categories.Any())
         {
             var categories = new List<Category>
@@ -32,6 +32,7 @@ public static class DatabaseSeeding
 
     private static void seedWorkouts(WorkoutDbContext dbContext)
     {
+        // if there are no workouts in the database, add some
         if (!dbContext.Workouts.Any())
         {
             var workouts = new List<Workout>

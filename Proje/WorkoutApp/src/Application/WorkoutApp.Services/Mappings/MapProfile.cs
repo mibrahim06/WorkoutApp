@@ -1,4 +1,5 @@
 using AutoMapper;
+using WorkoutApp.DataTransferObjects.Requests;
 using WorkoutApp.DataTransferObjects.Responses;
 using WorkoutApp.Entities;
 
@@ -10,6 +11,7 @@ public class MapProfile : Profile
     {
         CreateMap<Workout, WorkoutDisplayResponse>();
         CreateMap<Category, CategoryDisplayResponse>();
+        CreateMap<CreateNewWorkoutRequest, Workout>();
     }
     
 }
