@@ -5,4 +5,5 @@ namespace WorkoutApp.Services;
 public interface IWorkoutService
 {
     public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponses();
+    public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponsesByCategoryId(int categoryId);
 }

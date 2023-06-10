@@ -18,7 +18,8 @@ public class HomeController : Controller
 
     public IActionResult Index(int pageNo = 1, int? Id = null)
     {
-        var workouts = _workoutService.GetWorkoutDisplayResponses();
+        var workouts = Id == null ? _workoutService.GetWorkoutDisplayResponses() :
+            _workoutService.GetWorkoutDisplayResponsesByCategoryId(Id.Value);
         var workoutPerPage = 8;
         var workoutDisplayResponses = workouts as WorkoutDisplayResponse[] ?? workouts.ToArray();
         var totalWorkoutCount = workoutDisplayResponses.Count();

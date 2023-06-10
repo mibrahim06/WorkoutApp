@@ -19,4 +19,10 @@ public class WorkoutService : IWorkoutService
         var workouts = _workoutRepository.GetAll();
         return _mapper.Map<IEnumerable<WorkoutDisplayResponse>>(workouts);
     }
+    
+    public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponsesByCategoryId(int categoryId)
+    {
+        var workouts = _workoutRepository.GetWorkoutsByCategory(categoryId);
+        return _mapper.Map<IEnumerable<WorkoutDisplayResponse>>(workouts);
+    }
 }
