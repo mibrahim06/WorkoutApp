@@ -1,4 +1,4 @@
-Demo videosu
+Demo videosu için resme tıklayın
 =============
 
 .. image:: /screenshots/1.png
