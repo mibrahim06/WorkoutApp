@@ -18,7 +18,7 @@ Egzersiz Planı
    :target: https://youtu.be/9KVpnP9P89I
 
 
-Yönetici Panali
+Yönetici Paneli
 ===============
 .. image:: /screenshots/4.png
    :target: https://youtu.be/9KVpnP9P89I
