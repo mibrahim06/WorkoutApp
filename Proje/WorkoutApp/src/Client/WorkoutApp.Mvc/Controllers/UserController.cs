@@ -26,33 +26,34 @@ public class UserController : Controller
         return View();
     }
     [HttpPost]
-    public async Task<IActionResult> Login(UserLoginViewModel userLoginViewModel, string? rtnUrl)
+    public async Task<IActionResult> Login(UserLoginViewModel userLogin, string? rtnUrl)
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
         {
-            var user = _userService.Authenticate(userLoginViewModel.Username, userLoginViewModel.Password);
-            if (user == null)
+            var user = _userService.Authenticate(userLogin.Username, userLogin.Password);
+            if (user != null)
             {
-                ModelState.AddModelError("", "Kullanıcı adı veya şifre yanlış");
-                return View(userLoginViewModel);
+                Claim[] claims = new Claim[]
+                {
+                    new Claim(ClaimTypes.Name,user.Name),
+                    new Claim(ClaimTypes.Email,user.Email),
+                    new Claim(ClaimTypes.Role,user.Role)
+                };
+                ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(principal);
+
+                if (!string.IsNullOrEmpty(rtnUrl) && Url.IsLocalUrl(rtnUrl))
+                {
+                    return Redirect(rtnUrl);
+                }
+                return Redirect("/");
+
             }
-            Claim[] claims = new[]
-            {
-                new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Role, user.Role)
-            };
-            ClaimsIdentity claimsIdentity =
-                new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-            await HttpContext.SignInAsync(claimsPrincipal);
-            
-            if (!string.IsNullOrEmpty(rtnUrl) && Url.IsLocalUrl(rtnUrl))
-            {
-                return Redirect(rtnUrl);
-            }
-            return RedirectToAction("Index", "Home");
+            ModelState.AddModelError("login", "Kullanıcı adı ya da şifre yanlış!");
         }
-        return View(userLoginViewModel);
+
+        return View();
     }
     
     public async Task<IActionResult> Logout()
