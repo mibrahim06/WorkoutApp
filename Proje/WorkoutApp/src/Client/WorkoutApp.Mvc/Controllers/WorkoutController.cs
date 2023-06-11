@@ -6,7 +6,7 @@ using WorkoutApp.Services;
 
 namespace WorkoutApp.Mvc.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin, Editor")]
 public class WorkoutController : Controller
 {
     private readonly IWorkoutService _workoutService;

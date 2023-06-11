@@ -61,4 +61,9 @@ public class UserController : Controller
         await HttpContext.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+    
+    public IActionResult AccessDenied()
+    {
+        return View();
+    }
 }

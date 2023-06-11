@@ -13,18 +13,18 @@ public class UserService : IUserService
         {
             new()
             {
-                Id = 1, Email = "test@gmail.com", Name = "ibrahim", Password = "testpassword", Role = "Admin",
-                Username = "ibrahim"
+                Id = 1, Email = "test@gmail.com", Name = "admin", Password = "abcd", Role = "Admin",
+                Username = "admin"
             },
             new()
             {
-                Id = 2, Email = "test2@gmail.com", Name = "furkan", Password = "12345zxcv", Role = "User",
-                Username = "xxKralxx"
+                Id = 2, Email = "test2@gmail.com", Name = "user", Password = "abcd", Role = "User",
+                Username = "user"
             },
             new User()
             {
-                Id =3, Email = "abc@gmail.com", Name = "Fulya", Password = "abc1234", Role = "Editor",
-                Username = "fulya"
+                Id =3, Email = "abc@gmail.com", Name = "editor", Password = "abcd", Role = "Editor",
+                Username = "editor"
             }
         };
     }

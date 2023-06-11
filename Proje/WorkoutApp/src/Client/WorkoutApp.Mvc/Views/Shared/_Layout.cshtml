@@ -38,6 +38,14 @@
                                 <a class="nav-link text-white" asp-area="" asp-controller="User" asp-action="Login">Giriş yap</a>
                             </li>
                         }
+                        @if (User.IsInRole("Admin") || User.IsInRole("Editor"))
+                        {     
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Workout" asp-action="Index">Yönetici Paneli</a>
+                            </li>
+                        }
+                       
+                        
                     </ul>
                 </div>
             </div>
