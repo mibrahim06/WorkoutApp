@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using WorkoutApp.Infrastructure.Data;
 using WorkoutApp.Infrastructure.Repositories;
@@ -19,6 +20,15 @@ builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(8));
 var connectionString = builder.Configuration.GetConnectionString("db");
 builder.Services.AddDbContext<WorkoutDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option =>
+    {
+        option.LoginPath = "/User/Login";
+        option.AccessDeniedPath = "/User/AccessDenied";
+    });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

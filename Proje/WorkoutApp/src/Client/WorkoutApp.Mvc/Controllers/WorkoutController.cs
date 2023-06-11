@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WorkoutApp.DataTransferObjects.Requests;
@@ -5,6 +6,7 @@ using WorkoutApp.Services;
 
 namespace WorkoutApp.Mvc.Controllers;
 
+[Authorize]
 public class WorkoutController : Controller
 {
     private readonly IWorkoutService _workoutService;
