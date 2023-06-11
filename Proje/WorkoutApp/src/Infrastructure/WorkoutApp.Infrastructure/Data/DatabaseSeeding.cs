@@ -34,11 +34,15 @@ public static class DatabaseSeeding
         {
             var categories = new List<Category>
             {
-                new Category { Name = "Strength" },
-                new Category { Name = "Cardio" },
-                new Category { Name = "Flexibility" },
-                new Category { Name = "Balance" },
-                
+                new Category { Name = "Omuz",},
+                new Category { Name = "Trapez" },
+                new Category { Name = "Göğüs" },
+                new Category { Name = "Biceps" },
+                new Category { Name = "Triceps" },
+                new Category { Name = "Sırt" },
+                new Category { Name = "Karın" },
+                new Category { Name = "Bacak" },
+                new Category { Name = "Ön Kol" },
             };
             dbContext.Categories.AddRange(categories);
             dbContext.SaveChanges();
