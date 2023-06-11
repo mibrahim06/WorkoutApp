@@ -13,6 +13,7 @@ builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 builder.Services.AddScoped<IWorkoutRepository, EFWorkoutRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, EFCategortRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(8));
@@ -26,6 +27,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         option.LoginPath = "/User/Login";
         option.AccessDeniedPath = "/User/AccessDenied";
+        option.ReturnUrlParameter = "rtnUrl";
     });
 
 
