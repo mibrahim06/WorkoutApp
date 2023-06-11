@@ -9,6 +9,22 @@ public static class DatabaseSeeding
         // if there are no categories in the database, add some
         seedCategories(dbContext);
         seedWorkouts(dbContext);
+        seedUsers(dbContext);
+    }
+
+    private static void seedUsers(WorkoutDbContext dbContext)
+    {
+        if (!dbContext.Users.Any())
+        {
+            var users = new List<User>
+            {
+                new User() { Username = "admin", Email = "test@abc.com", Password = "zxcv", Role = "Admin", Name = "Admin" },
+                new User() { Username = "user", Email = "test2@abc.com", Password = "zxcv", Role = "User", Name = "User" },
+                new User() { Username = "editor",Email = "test3@abc.com", Password = "zxcv", Role = "Editor", Name = "Editor" },
+            };
+            dbContext.Users.AddRange(users);
+            dbContext.SaveChanges();
+        }
     }
 
     private static void seedCategories(WorkoutDbContext dbContext)

@@ -14,6 +14,7 @@ builder.Services.AddScoped<IWorkoutRepository, EFWorkoutRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICategoryRepository, EFCategortRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, EFUserRepository>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromMinutes(8));

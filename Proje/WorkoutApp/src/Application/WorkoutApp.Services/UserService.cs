@@ -1,4 +1,5 @@
 using WorkoutApp.Entities;
+using WorkoutApp.Infrastructure.Repositories;
 
 namespace WorkoutApp.Services;
 
@@ -6,36 +7,18 @@ public class UserService : IUserService
 {
     // this is fake data for now for testing purposes
     // @TODO: replace with real data
-    private List<User> _users;
-    public UserService()
+    private readonly IUserRepository _userRepository;
+    public UserService(IUserRepository userRepository)
     {
-        _users = new()
-        {
-            new()
-            {
-                Id = 1, Email = "test@gmail.com", Name = "admin", Password = "abcd", Role = "Admin",
-                Username = "admin"
-            },
-            new()
-            {
-                Id = 2, Email = "test2@gmail.com", Name = "user", Password = "abcd", Role = "User",
-                Username = "user"
-            },
-            new User()
-            {
-                Id =3, Email = "abc@gmail.com", Name = "editor", Password = "abcd", Role = "Editor",
-                Username = "editor"
-            }
-        };
+        _userRepository = userRepository;
     }
     public User? Authenticate(string username, string password)
     {
-        var user = _users.SingleOrDefault(u => u.Username == username && u.Password == password);
+        var user = _userRepository.GetUserByUsernamePasswordAsync(username, password).Result;
         if (user == null)
         {
             return null;
         }
-
         return user;
     }
 }
