@@ -34,6 +34,18 @@ public class WorkoutPlanController : Controller
         return Json(new { message = $"{name} başarıyla eklendi!"});
     }
 
+    public IActionResult DeleteWorkout(int id)
+    {
+        // get selected workout from db
+        var selectedWorkout = _workoutService.GetWorkoutDisplayResponseById(id);
+        // delete workout from workout collection
+        var workoutCollection = getWorkOutCollectionFromSession();
+        workoutCollection.DeleteWorkout(id);
+        // save workout collection to session
+        saveToSession(workoutCollection);
+        return Json(new { message = $"{selectedWorkout.Name} silindi!"});
+    }
+
     private WorkoutCollection getWorkOutCollectionFromSession()
     {
         var serialized = HttpContext.Session.GetString("plan");

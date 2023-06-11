@@ -20,6 +20,15 @@ public class WorkoutCollection
             Workouts.Add(workoutItem);
         }
     }
+    
+    public void DeleteWorkout(int id)
+    {
+        var existingWorkout = Workouts.FirstOrDefault(c => c.Workout.Id == id);
+        if (existingWorkout != null)
+        {
+            Workouts.Remove(existingWorkout);
+        }
+    }
 }
 
 public class WorkoutItem
