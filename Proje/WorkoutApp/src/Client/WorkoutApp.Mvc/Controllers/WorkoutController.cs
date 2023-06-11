@@ -54,8 +54,10 @@ public class WorkoutController : Controller
         return View();
     }
 
-    public IActionResult Delete()
+    public async Task<IActionResult> Delete(int id)
     {
-        throw new NotImplementedException();
+        await _workoutService.DeleteWorkoutAsync(id);
+        return RedirectToAction("Index");
     }
+    
 }

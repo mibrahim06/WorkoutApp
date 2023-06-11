@@ -39,4 +39,10 @@ public class WorkoutService : IWorkoutService
         var workout = _mapper.Map<Workout>(request);
         await _workoutRepository.AddAsync(workout);
     }
+    
+    public async Task DeleteWorkoutAsync(int id)
+    {
+        var workout = await _workoutRepository.GetByIdAsync(id);
+        await _workoutRepository.DeleteAsync(workout);
+    }
 }

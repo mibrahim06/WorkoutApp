@@ -9,4 +9,5 @@ public interface IWorkoutService
     public IEnumerable<WorkoutDisplayResponse> GetWorkoutDisplayResponsesByCategoryId(int categoryId);
     public WorkoutDisplayResponse GetWorkoutDisplayResponseById(int id);
     public Task CreateWorkoutAsync(CreateNewWorkoutRequest request);
+    public Task DeleteWorkoutAsync(int id);
 }
